@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "362945118136",
+    "project_id": "timoti-mall-5abb3",
+    "storage_bucket": "timoti-mall-5abb3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:362945118136:android:c30b6a247f94e8e361594d",
+        "android_client_info": {
+          "package_name": "com.innotia.timoti"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "362945118136-7rdf9q504599d9hdv1s23cab7sn907pg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9nEkI7R8HsvO6CUAw9v5Buvm9Gvc5CtY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "362945118136-7rdf9q504599d9hdv1s23cab7sn907pg.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "362945118136-p6891me27alfjrvu9j42kkp8g095u7do.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.timoti.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

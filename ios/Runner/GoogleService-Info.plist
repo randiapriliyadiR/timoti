@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>362945118136-tk4hc5mabi18s7eo36ura7g66uqc39r2.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.362945118136-tk4hc5mabi18s7eo36ura7g66uqc39r2</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAl0efHF4hQnbmz1qDE8jU-5ovwf8tUPAY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>362945118136</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.innotia.timoti</string>
+	<key>PROJECT_ID</key>
+	<string>timoti-mall-5abb3</string>
+	<key>STORAGE_BUCKET</key>
+	<string>timoti-mall-5abb3.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:362945118136:ios:0a729b9cca2eab1061594d</string>
+</dict>
+</plist>
