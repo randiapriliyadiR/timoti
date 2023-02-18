@@ -17,106 +17,86 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    // ignore: non_constant_identifier_names
-    Widget CartButton() {
-      return FloatingActionButton(
-        onPressed: () {
-          Navigator.pushNamed(context, '/cart');
-        },
-        backgroundColor: primaryTextColor,
-        child: Icon(
-          Icons.shopping_bag,
-          size: 20,
-          color: backgroundColor1,
-        ),
-        // child: Image.asset(
-        //   'assets/icon_cart.png',
-        //   width: 20,
-        // ),
-      );
-    }
-
     Widget bottomNav() {
-      return ClipRRect(
-        borderRadius: const BorderRadius.vertical(
-          top: Radius.circular(30),
-        ),
-        child: BottomAppBar(
-          shape: const CircularNotchedRectangle(),
-          notchMargin: 12,
-          clipBehavior: Clip.antiAlias,
-          child: BottomNavigationBar(
-            backgroundColor: backgroundColor4,
-            currentIndex: currentIndex,
-            onTap: (value) {
-              setState(() {
-                currentIndex = value;
-              });
-            },
-            type: BottomNavigationBarType.fixed,
-            items: [
-              BottomNavigationBarItem(
-                icon: Container(
-                  margin: const EdgeInsets.only(
-                    top: 20,
-                    bottom: 10,
-                  ),
-                  child: Image.asset(
-                    'assets/icon_home.png',
-                    width: 21,
-                    color: currentIndex == 0 ? activeNavyColor : navbarColor,
-                  ),
+      return BottomAppBar(
+        child: BottomNavigationBar(
+          backgroundColor: primaryTextColor,
+          currentIndex: currentIndex,
+          unselectedItemColor: navbarColor,
+          selectedItemColor: activeNavColor,
+          onTap: (value) {
+            setState(() {
+              currentIndex = value;
+            });
+          },
+          type: BottomNavigationBarType.fixed,
+          items: [
+            BottomNavigationBarItem(
+              icon: Container(
+                margin: const EdgeInsets.only(
+                  top: 5,
                 ),
-                label: '',
-              ),
-              BottomNavigationBarItem(
-                icon: Container(
-                  margin: const EdgeInsets.only(
-                    top: 20,
-                    bottom: 10,
-                  ),
-                  child: Image.asset(
-                    'assets/icon_chat.png',
-                    width: 20,
-                    color: currentIndex == 1 ? activeNavyColor : navbarColor,
-                  ),
+                child: Icon(
+                  Icons.home_sharp,
+                  size: 24,
+                  color: currentIndex == 0 ? activeNavColor : navbarColor,
                 ),
-                label: '',
               ),
-              BottomNavigationBarItem(
-                icon: Container(
-                  margin: const EdgeInsets.only(
-                    top: 20,
-                    bottom: 10,
-                  ),
-                  child: Icon(
-                    Icons.wallet,
-                    color: currentIndex == 2 ? activeNavyColor : navbarColor,
-                  ),
-                  // child: Image.asset(
-                  //   'assets/icon_wishlist.png',
-                  //   width: 20,
-                  //   color: currentIndex == 2 ? activeNavyColor : navbarColor,
-                  // ),
+              label: 'Beranda',
+            ),
+            BottomNavigationBarItem(
+              icon: Container(
+                margin: const EdgeInsets.only(
+                  top: 5,
                 ),
-                label: '',
-              ),
-              BottomNavigationBarItem(
-                icon: Container(
-                  margin: const EdgeInsets.only(
-                    top: 20,
-                    bottom: 10,
-                  ),
-                  child: Image.asset(
-                    'assets/icon_profile.png',
-                    width: 18,
-                    color: currentIndex == 3 ? activeNavyColor : navbarColor,
-                  ),
+                child: Icon(
+                  Icons.shopping_cart_sharp,
+                  size: 24,
+                  color: currentIndex == 1 ? activeNavColor : navbarColor,
                 ),
-                label: '',
               ),
-            ],
-          ),
+              label: 'Keranjang',
+            ),
+            BottomNavigationBarItem(
+              icon: Container(
+                margin: const EdgeInsets.only(
+                  top: 5,
+                ),
+                child: Icon(
+                  Icons.account_balance_wallet,
+                  size: 24,
+                  color: currentIndex == 2 ? activeNavColor : navbarColor,
+                ),
+              ),
+              label: 'Wallet',
+            ),
+            BottomNavigationBarItem(
+              icon: Container(
+                margin: const EdgeInsets.only(
+                  top: 5,
+                ),
+                child: Icon(
+                  Icons.chat,
+                  size: 24,
+                  color: currentIndex == 3 ? activeNavColor : navbarColor,
+                ),
+              ),
+              label: 'Pesan',
+            ),
+            BottomNavigationBarItem(
+              icon: Container(
+                margin: const EdgeInsets.only(
+                  top: 5,
+                ),
+                child: Icon(
+                  Icons.person,
+                  size: 24,
+                  color: currentIndex == 3 ? activeNavColor : navbarColor,
+                ),
+              ),
+              label: 'Akun',
+            ),
+          ],
         ),
       );
     }
@@ -131,6 +111,8 @@ class _HomeState extends State<Home> {
           return const WalletPage();
         case 3:
           return const ProfilePage();
+        case 4:
+          return const ProfilePage();
         default:
           return const HomePage();
       }
@@ -138,7 +120,6 @@ class _HomeState extends State<Home> {
 
     return Scaffold(
       backgroundColor: backgroundColor1,
-      floatingActionButton: CartButton(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: bottomNav(),
       body: body(),

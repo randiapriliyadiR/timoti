@@ -195,7 +195,7 @@ class _LoginState extends State<Login> {
             },
             child: Text(
               'Daftar',
-              style: purpleTextStyle.copyWith(
+              style: goldTextStyle.copyWith(
                 fontSize: 12,
                 fontWeight: medium,
               ),

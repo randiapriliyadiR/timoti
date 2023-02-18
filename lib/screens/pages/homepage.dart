@@ -15,41 +15,186 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     Widget header() {
       return Container(
-        margin: EdgeInsets.only(
-          top: defaultMargin,
-          left: defaultMargin,
-          right: defaultMargin,
+        width: 100,
+        height: 130,
+        decoration: BoxDecoration(
+          color: headerColor,
+        ),
+        child: Column(
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            Padding(
+              padding: const EdgeInsetsDirectional.fromSTEB(20, 20, 20, 10),
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      right: 4,
+                    ),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Text(
+                          'Selamat datang di Timoti',
+                          style: blackTextStyle.copyWith(
+                            fontWeight: semiBold,
+                          ),
+                        ),
+                        Text(
+                          'Hello World',
+                          style: blackTextStyle.copyWith(
+                            fontWeight: regular,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Icon(
+                    Icons.map_outlined,
+                    color: blackColor,
+                    size: 35,
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsetsDirectional.fromSTEB(20, 0, 20, 0),
+              child: Container(
+                width: double.infinity,
+                height: 45,
+                decoration: BoxDecoration(
+                  color: backgroundColor1,
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Padding(
+                  padding: const EdgeInsetsDirectional.fromSTEB(20, 5, 20, 5),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Icon(
+                        Icons.search,
+                        color: blackColor,
+                        size: 24,
+                      ),
+                      Text(
+                        'Cari Produk',
+                        style: blackTextStyle,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      );
+      // Container(
+      //   margin: EdgeInsets.only(
+      //     top: defaultMargin,
+      //     left: defaultMargin,
+      //     right: defaultMargin,
+      //   ),
+      //   child: Row(
+      //     children: [
+      //       Expanded(
+      //         child: Column(
+      //           crossAxisAlignment: CrossAxisAlignment.start,
+      //           children: [
+      //             Text(
+      //               'Hai, admin',
+      //               style: primaryTextStyle.copyWith(
+      //                 fontSize: 24,
+      //                 fontWeight: semiBold,
+      //               ),
+      //             ),
+      //             Text(
+      //               'administrator@example.com',
+      //               style: subtitleTextStyle.copyWith(fontSize: 16),
+      //             ),
+      //           ],
+      //         ),
+      //       ),
+      //       Container(
+      //         width: 54,
+      //         height: 54,
+      //         decoration: const BoxDecoration(
+      //           shape: BoxShape.circle,
+      //           image: DecorationImage(
+      //             image: AssetImage(
+      //               'assets/image_profile.png',
+      //             ),
+      //           ),
+      //         ),
+      //       ),
+      //     ],
+      //   ),
+      // );
+    }
+
+    Widget balanceAccount() {
+      return Container(
+        height: 50,
+        decoration: BoxDecoration(
+          color: backgroundColor1,
         ),
         child: Row(
           children: [
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+            Container(
+              width: MediaQuery.of(context).size.width * 0.5,
+              height: MediaQuery.of(context).size.height * 1,
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: Colors.black,
+                ),
+              ),
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
-                    'Hai, admin',
-                    style: primaryTextStyle.copyWith(
-                      fontSize: 24,
-                      fontWeight: semiBold,
+                  const Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
+                    child: Icon(
+                      Icons.stars,
+                      color: Colors.black,
+                      size: 24,
                     ),
                   ),
                   Text(
-                    'administrator@example.com',
-                    style: subtitleTextStyle.copyWith(fontSize: 16),
+                    '0 point',
+                    style: blackTextStyle,
                   ),
                 ],
               ),
             ),
             Container(
-              width: 54,
-              height: 54,
-              decoration: const BoxDecoration(
-                shape: BoxShape.circle,
-                image: DecorationImage(
-                  image: AssetImage(
-                    'assets/image_profile.png',
-                  ),
+              width: MediaQuery.of(context).size.width * 0.5,
+              height: MediaQuery.of(context).size.height * 1,
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: Colors.black,
                 ),
+              ),
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
+                    child: Icon(
+                      Icons.attach_money,
+                      color: Colors.black,
+                      size: 24,
+                    ),
+                  ),
+                  Text(
+                    'Rp 0.000.00',
+                    style: blackTextStyle,
+                  ),
+                ],
               ),
             ),
           ],
@@ -58,119 +203,105 @@ class _HomePageState extends State<HomePage> {
     }
 
     Widget categories() {
-      return Container(
-        margin: EdgeInsets.only(
-          top: defaultMargin,
-        ),
-        child: SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Row(
-            children: [
-              SizedBox(width: defaultMargin),
-              Container(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 12,
-                  vertical: 10,
-                ),
-                margin: const EdgeInsets.only(right: 16),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  color: primaryColor,
-                ),
-                child: Text(
-                  'Semua Produk',
-                  style: whiteTextStyle.copyWith(
-                    fontSize: 13,
-                    fontWeight: medium,
+      return Padding(
+        padding: const EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
+        child: Row(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Column(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Container(
+                  width: 50,
+                  height: 50,
+                  decoration: BoxDecoration(
+                    color: warningColor,
+                    borderRadius: BorderRadius.circular(50),
+                  ),
+                  child: Icon(
+                    Icons.loyalty,
+                    size: 30,
+                    color: alertColor,
                   ),
                 ),
-              ),
-              Container(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 12,
-                  vertical: 10,
+                Text(
+                  'Special',
+                  style: blackTextStyle,
+                  textAlign: TextAlign.center,
                 ),
-                margin: const EdgeInsets.only(right: 16),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  border: Border.all(
-                    color: subtitleColor,
+              ],
+            ),
+            Column(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Container(
+                  width: 50,
+                  height: 50,
+                  decoration: BoxDecoration(
+                    color: warningColor,
+                    borderRadius: BorderRadius.circular(50),
                   ),
-                  color: transparentColor,
-                ),
-                child: Text(
-                  'Skin care',
-                  style: subtitleTextStyle.copyWith(
-                    fontSize: 13,
-                    fontWeight: medium,
-                  ),
-                ),
-              ),
-              Container(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 12,
-                  vertical: 10,
-                ),
-                margin: const EdgeInsets.only(right: 16),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  border: Border.all(
-                    color: subtitleColor,
-                  ),
-                  color: transparentColor,
-                ),
-                child: Text(
-                  'Skin care',
-                  style: subtitleTextStyle.copyWith(
-                    fontSize: 13,
-                    fontWeight: medium,
+                  child: Icon(
+                    Icons.face_retouching_natural,
+                    size: 30,
+                    color: backgroundWarningColor,
                   ),
                 ),
-              ),
-              Container(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 12,
-                  vertical: 10,
+                Text(
+                  'Skin Care',
+                  style: blackTextStyle,
+                  textAlign: TextAlign.center,
                 ),
-                margin: const EdgeInsets.only(right: 16),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  border: Border.all(
-                    color: subtitleColor,
+              ],
+            ),
+            Column(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Container(
+                  width: 50,
+                  height: 50,
+                  decoration: BoxDecoration(
+                    color: warningColor,
+                    borderRadius: BorderRadius.circular(50),
                   ),
-                  color: transparentColor,
-                ),
-                child: Text(
-                  'Skin care',
-                  style: subtitleTextStyle.copyWith(
-                    fontSize: 13,
-                    fontWeight: medium,
-                  ),
-                ),
-              ),
-              Container(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 12,
-                  vertical: 10,
-                ),
-                margin: const EdgeInsets.only(right: 16),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  border: Border.all(
-                    color: subtitleColor,
-                  ),
-                  color: transparentColor,
-                ),
-                child: Text(
-                  'Skin care',
-                  style: subtitleTextStyle.copyWith(
-                    fontSize: 13,
-                    fontWeight: medium,
+                  child: Icon(
+                    Icons.clean_hands,
+                    size: 30,
+                    color: backgroundWarningColor,
                   ),
                 ),
-              ),
-            ],
-          ),
+                Text(
+                  'Hand Care',
+                  style: blackTextStyle,
+                  textAlign: TextAlign.center,
+                ),
+              ],
+            ),
+            Column(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Container(
+                  width: 50,
+                  height: 50,
+                  decoration: BoxDecoration(
+                    color: warningColor,
+                    borderRadius: BorderRadius.circular(50),
+                  ),
+                  child: Icon(
+                    Icons.brush,
+                    size: 30,
+                    color: secondaryColor,
+                  ),
+                ),
+                Text(
+                  'Make Up',
+                  style: blackTextStyle,
+                  textAlign: TextAlign.center,
+                ),
+              ],
+            ),
+          ],
         ),
       );
     }
@@ -256,6 +387,7 @@ class _HomePageState extends State<HomePage> {
     return ListView(
       children: [
         header(),
+        balanceAccount(),
         categories(),
         popularProductTitle(),
         popularProducts(),

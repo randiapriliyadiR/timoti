@@ -241,7 +241,7 @@ class _RegisterState extends State<Register> {
             },
             child: Text(
               'Login',
-              style: purpleTextStyle.copyWith(
+              style: goldTextStyle.copyWith(
                 fontSize: 12,
                 fontWeight: medium,
               ),

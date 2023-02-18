@@ -3,12 +3,17 @@ import 'package:google_fonts/google_fonts.dart';
 
 double defaultMargin = 30.0;
 
-Color activeNavyColor = const Color(0xffFFDC84);
-Color navbarColor = const Color(0xffBC8B14);
+Color headerColor = const Color(0xffF4E5BC);
+Color activeNavColor = const Color(0xffE1AE31);
+Color navbarColor = const Color(0xffFFFFFF);
 Color primaryColor = const Color(0xffE1AE31);
 Color secondaryColor = const Color(0xff38ABBE);
 Color alertColor = const Color(0xffED6363);
+Color backgroundAlertColor = const Color.fromARGB(255, 231, 157, 157);
+Color warningColor = const Color(0xffE1E131);
+Color backgroundWarningColor = const Color(0xffFFFF84);
 Color priceColor = const Color(0xff51C17E);
+Color backgroundPriceColor = const Color(0xFFA5EFA5);
 Color backgroundColor1 = const Color(0xffFFFFFF);
 Color backgroundColor2 = const Color(0xffD0CDE1);
 Color backgroundColor3 = const Color(0xff242231);
@@ -40,7 +45,7 @@ TextStyle priceTextStyle = GoogleFonts.poppins(
   color: priceColor,
 );
 
-TextStyle purpleTextStyle = GoogleFonts.poppins(
+TextStyle goldTextStyle = GoogleFonts.poppins(
   color: primaryColor,
 );
 
@@ -50,6 +55,10 @@ TextStyle blackTextStyle = GoogleFonts.poppins(
 
 TextStyle alertTextStyle = GoogleFonts.poppins(
   color: alertColor,
+);
+
+TextStyle warningTextStyle = GoogleFonts.poppins(
+  color: warningColor,
 );
 
 FontWeight light = FontWeight.w300;
