@@ -115,30 +115,23 @@ class _ProfilePageState extends State<ProfilePage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Hai, Admin',
+                      'Guest',
                       style: primaryTextStyle.copyWith(
                         fontSize: 24,
                         fontWeight: semiBold,
                       ),
                     ),
-                    Text(
-                      'administrator@example.com',
-                      style: subtitleTextStyle.copyWith(
-                        fontSize: 12,
+                    GestureDetector(
+                      onTap: () {},
+                      child: Text(
+                        'Ubah Profil >',
+                        style: subtitleTextStyle.copyWith(
+                          fontSize: 14,
+                          decoration: TextDecoration.underline,
+                        ),
                       ),
                     ),
                   ],
-                ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  Navigator.pushNamedAndRemoveUntil(
-                      context, '/login', (route) => false);
-                },
-                child: Icon(
-                  Icons.logout,
-                  size: 25,
-                  color: alertColor,
                 ),
               ),
             ],
@@ -149,21 +142,28 @@ class _ProfilePageState extends State<ProfilePage> {
   }
 
   Widget menuItem(String text) {
-    return Container(
-      margin: const EdgeInsets.only(top: 16),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(
-            text,
-            style: secondaryTextStyle.copyWith(fontSize: 13),
+    return Column(
+      children: [
+        Padding(
+          padding: EdgeInsets.symmetric(
+            horizontal: defaultMargin,
+            vertical: 8,
           ),
-          Icon(
-            Icons.chevron_right,
-            color: primaryTextColor,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                text,
+                style: primaryTextStyle.copyWith(fontSize: 16),
+              ),
+              Icon(
+                Icons.chevron_right,
+                color: primaryTextColor,
+              ),
+            ],
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 
@@ -171,9 +171,6 @@ class _ProfilePageState extends State<ProfilePage> {
     return Expanded(
       child: Container(
         width: double.infinity,
-        padding: EdgeInsets.symmetric(
-          horizontal: defaultMargin,
-        ),
         decoration: BoxDecoration(
           color: backgroundColor1,
         ),
@@ -183,66 +180,233 @@ class _ProfilePageState extends State<ProfilePage> {
             const SizedBox(
               height: 20,
             ),
-            Text(
-              'Akun',
-              style: primaryTextStyle.copyWith(
-                fontSize: 16,
-                fontWeight: semiBold,
-              ),
+            Divider(
+              color: backgroundColor5,
+              thickness: 0.3,
             ),
             GestureDetector(
-              onTap: () {
-                // Navigator.pushNamed(context, '/edit-profile');
-              },
-              child: menuItem(
-                'Ubah Profil',
+              onTap: () {},
+              child: Column(
+                children: [
+                  menuItem(
+                    'History Pembelian',
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      top: 12,
+                      bottom: 4,
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Column(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Container(
+                              width: 50,
+                              height: 50,
+                              decoration: BoxDecoration(
+                                color: warningColor,
+                                borderRadius: BorderRadius.circular(50),
+                              ),
+                              child: Icon(
+                                Icons.loyalty,
+                                size: 30,
+                                color: alertColor,
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 8,
+                            ),
+                            Text(
+                              'Special',
+                              style: blackTextStyle,
+                              textAlign: TextAlign.center,
+                            ),
+                          ],
+                        ),
+                        Column(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Container(
+                              width: 50,
+                              height: 50,
+                              decoration: BoxDecoration(
+                                color: warningColor,
+                                borderRadius: BorderRadius.circular(50),
+                              ),
+                              child: Icon(
+                                Icons.face_retouching_natural,
+                                size: 30,
+                                color: blackColor,
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 8,
+                            ),
+                            Text(
+                              'Skin Care',
+                              style: blackTextStyle,
+                              textAlign: TextAlign.center,
+                            ),
+                          ],
+                        ),
+                        Column(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Container(
+                              width: 50,
+                              height: 50,
+                              decoration: BoxDecoration(
+                                color: warningColor,
+                                borderRadius: BorderRadius.circular(50),
+                              ),
+                              child: Icon(
+                                Icons.clean_hands,
+                                size: 30,
+                                color: blackColor,
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 8,
+                            ),
+                            Text(
+                              'Hand Care',
+                              style: blackTextStyle,
+                              textAlign: TextAlign.center,
+                            ),
+                          ],
+                        ),
+                        Column(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Container(
+                              width: 50,
+                              height: 50,
+                              decoration: BoxDecoration(
+                                color: warningColor,
+                                borderRadius: BorderRadius.circular(50),
+                              ),
+                              child: Icon(
+                                Icons.brush,
+                                size: 30,
+                                color: secondaryColor,
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 8,
+                            ),
+                            Text(
+                              'Make Up',
+                              style: blackTextStyle,
+                              textAlign: TextAlign.center,
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               ),
             ),
-            menuItem(
-              'History Pembelian',
+            Divider(
+              color: backgroundColor5,
+              thickness: 0.3,
             ),
             GestureDetector(
               onTap: () {},
               child: menuItem(
-                'Wishlist',
-              ),
-            ),
-            const SizedBox(
-              height: 30,
-            ),
-            Text(
-              'Umum',
-              style: primaryTextStyle.copyWith(
-                fontSize: 16,
-                fontWeight: semiBold,
+                'Voucher',
               ),
             ),
             GestureDetector(
-              onTap: () {
-                Navigator.pushNamed(context, '/privacy-policy');
-              },
+              onTap: () {},
               child: menuItem(
-                'Kebijakan pribadi',
+                'Points',
               ),
             ),
             GestureDetector(
-              onTap: () {
-                Navigator.pushNamed(context, '/term');
-              },
+              onTap: () {},
+              child: menuItem(
+                'Referral',
+              ),
+            ),
+            GestureDetector(
+              onTap: () {},
+              child: menuItem(
+                'Setelan',
+              ),
+            ),
+            Divider(
+              color: backgroundColor5,
+              thickness: 0.3,
+            ),
+            GestureDetector(
+              onTap: () {},
+              child: menuItem(
+                'Versi Aplikasi',
+              ),
+            ),
+            Divider(
+              color: backgroundColor5,
+              thickness: 0.3,
+            ),
+            GestureDetector(
+              onTap: () {},
+              child: menuItem(
+                'Tentang kami',
+              ),
+            ),
+            GestureDetector(
+              onTap: () {},
+              child: menuItem(
+                'Kebijakan Pribadi',
+              ),
+            ),
+            Divider(
+              color: backgroundColor5,
+              thickness: 0.3,
+            ),
+            GestureDetector(
+              onTap: () {},
               child: menuItem(
                 'Ketentuan Penggunaan',
               ),
             ),
-            menuItem(
-              'Tentang kami',
+            Divider(
+              color: backgroundColor5,
+              thickness: 0.3,
             ),
-            GestureDetector(
-              onTap: () {
-                showVersionDialog();
-              },
-              child: menuItem(
-                'Versi Aplikasi',
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  width: 350,
+                  height: 50,
+                  margin: const EdgeInsets.only(
+                    top: 20,
+                  ),
+                  child: TextButton(
+                    onPressed: () {
+                      Navigator.pushNamedAndRemoveUntil(
+                          context, '/login', (route) => false);
+                    },
+                    style: TextButton.styleFrom(
+                        backgroundColor: primaryColor,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(50),
+                        )),
+                    child: Text(
+                      'Login/Daftar',
+                      style: whiteTextStyle.copyWith(
+                        fontSize: 18,
+                        fontWeight: medium,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
           ],
         ),
@@ -252,11 +416,13 @@ class _ProfilePageState extends State<ProfilePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        header(),
-        content(),
-      ],
+    return SafeArea(
+      child: Column(
+        children: [
+          header(),
+          content(),
+        ],
+      ),
     );
   }
 }

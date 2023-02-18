@@ -1,8 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
+import 'package:timoti/screens/pages/cartpage.dart';
 import 'package:timoti/screens/privacy_policy.dart';
 import 'firebase_options.dart';
 import 'package:flutter/material.dart';
-import 'package:timoti/screens/Cart.dart';
 import 'package:timoti/screens/login.dart';
 import 'package:timoti/screens/product.dart';
 import 'package:timoti/screens/register.dart';
@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
         '/login': (context) => const Login(),
         '/register': (context) => const Register(),
         '/product': (context) => const Product(),
-        '/cart': (context) => const Cart(),
+        '/cart': (context) => const CartPage(),
         '/privacy-policy': (context) => const PrivacyPolicy(),
         '/term': (context) => const Term(),
       },

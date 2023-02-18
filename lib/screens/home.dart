@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:timoti/screens/pages/cartpage.dart';
 import 'package:timoti/screens/pages/chatpage.dart';
 import 'package:timoti/screens/pages/homepage.dart';
+import 'package:timoti/screens/pages/messagepage.dart';
 import 'package:timoti/screens/pages/profilepage.dart';
 import 'package:timoti/screens/pages/walletpage.dart';
 import 'package:timoti/theme.dart';
@@ -106,11 +108,11 @@ class _HomeState extends State<Home> {
         case 0:
           return const HomePage();
         case 1:
-          return const ChatPage();
+          return const CartPage();
         case 2:
           return const WalletPage();
         case 3:
-          return const ProfilePage();
+          return const MessagePage();
         case 4:
           return const ProfilePage();
         default:

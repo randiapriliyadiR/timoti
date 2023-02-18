@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:timoti/theme.dart';
 
-class ProductCard extends StatelessWidget {
-  const ProductCard({super.key});
+class ProductCardAlt extends StatelessWidget {
+  const ProductCardAlt({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,7 @@ class ProductCard extends StatelessWidget {
                   ),
                   Text(
                     'make puff brush make up make puff brush make up make puff brush make up',
-                    style: whiteTextStyle.copyWith(
+                    style: primaryTextStyle.copyWith(
                       fontSize: 14,
                     ),
                     overflow: TextOverflow.ellipsis,
@@ -41,7 +41,7 @@ class ProductCard extends StatelessWidget {
                   const SizedBox(height: 6),
                   Text(
                     'Rp 150.000',
-                    style: whiteTextStyle.copyWith(
+                    style: primaryTextStyle.copyWith(
                       fontSize: 14,
                       fontWeight: bold,
                     ),

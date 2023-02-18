@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:timoti/theme.dart';
 import 'package:timoti/widgets/cart_card.dart';
 
-class Cart extends StatelessWidget {
-  const Cart({super.key});
+class CartPage extends StatelessWidget {
+  const CartPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,10 +12,14 @@ class Cart extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(
-              'assets/icon_empty_cart.png',
-              width: 80,
+            const Icon(
+              Icons.shopping_cart_outlined,
+              size: 80,
             ),
+            // Image.asset(
+            //   'assets/icon_empty_cart.png',
+            //   width: 80,
+            // ),
             const SizedBox(
               height: 20,
             ),
@@ -51,13 +55,13 @@ class Cart extends StatelessWidget {
                     )),
                 child: Text(
                   'Jelajahi Produk',
-                  style: primaryTextStyle.copyWith(
+                  style: whiteTextStyle.copyWith(
                     fontSize: 16,
                     fontWeight: medium,
                   ),
                 ),
               ),
-            )
+            ),
           ],
         ),
       );
@@ -73,7 +77,7 @@ class Cart extends StatelessWidget {
     }
 
     Widget customBottomNav() {
-      return Container(
+      return SizedBox(
         height: 180,
         child: Column(
           children: [
@@ -152,19 +156,17 @@ class Cart extends StatelessWidget {
     return Scaffold(
       backgroundColor: backgroundColor1,
       appBar: AppBar(
-        iconTheme: const IconThemeData(
-          color: Colors.black,
-        ),
+        automaticallyImplyLeading: false,
         backgroundColor: backgroundColor1,
         centerTitle: true,
         title: Text(
           "Keranjang",
           style: blackTextStyle,
         ),
-        elevation: 0,
+        elevation: 3,
       ),
-      body: content(),
-      bottomNavigationBar: 1 == 0 ? const SizedBox() : customBottomNav(),
+      body: emptyCard(),
+      bottomNavigationBar: 0 == 0 ? const SizedBox() : customBottomNav(),
     );
   }
 }

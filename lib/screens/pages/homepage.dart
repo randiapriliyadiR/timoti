@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:timoti/theme.dart';
 import 'package:timoti/widgets/product_card.dart';
+import 'package:timoti/widgets/product_card_alt.dart';
 import 'package:timoti/widgets/product_tile.dart';
 
 class HomePage extends StatefulWidget {
@@ -92,47 +93,6 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       );
-      // Container(
-      //   margin: EdgeInsets.only(
-      //     top: defaultMargin,
-      //     left: defaultMargin,
-      //     right: defaultMargin,
-      //   ),
-      //   child: Row(
-      //     children: [
-      //       Expanded(
-      //         child: Column(
-      //           crossAxisAlignment: CrossAxisAlignment.start,
-      //           children: [
-      //             Text(
-      //               'Hai, admin',
-      //               style: primaryTextStyle.copyWith(
-      //                 fontSize: 24,
-      //                 fontWeight: semiBold,
-      //               ),
-      //             ),
-      //             Text(
-      //               'administrator@example.com',
-      //               style: subtitleTextStyle.copyWith(fontSize: 16),
-      //             ),
-      //           ],
-      //         ),
-      //       ),
-      //       Container(
-      //         width: 54,
-      //         height: 54,
-      //         decoration: const BoxDecoration(
-      //           shape: BoxShape.circle,
-      //           image: DecorationImage(
-      //             image: AssetImage(
-      //               'assets/image_profile.png',
-      //             ),
-      //           ),
-      //         ),
-      //       ),
-      //     ],
-      //   ),
-      // );
     }
 
     Widget balanceAccount() {
@@ -225,6 +185,9 @@ class _HomePageState extends State<HomePage> {
                     color: alertColor,
                   ),
                 ),
+                const SizedBox(
+                  height: 8,
+                ),
                 Text(
                   'Special',
                   style: blackTextStyle,
@@ -245,8 +208,11 @@ class _HomePageState extends State<HomePage> {
                   child: Icon(
                     Icons.face_retouching_natural,
                     size: 30,
-                    color: backgroundWarningColor,
+                    color: blackColor,
                   ),
+                ),
+                const SizedBox(
+                  height: 8,
                 ),
                 Text(
                   'Skin Care',
@@ -268,8 +234,11 @@ class _HomePageState extends State<HomePage> {
                   child: Icon(
                     Icons.clean_hands,
                     size: 30,
-                    color: backgroundWarningColor,
+                    color: blackColor,
                   ),
+                ),
+                const SizedBox(
+                  height: 8,
                 ),
                 Text(
                   'Hand Care',
@@ -294,6 +263,9 @@ class _HomePageState extends State<HomePage> {
                     color: secondaryColor,
                   ),
                 ),
+                const SizedBox(
+                  height: 8,
+                ),
                 Text(
                   'Make Up',
                   style: blackTextStyle,
@@ -306,61 +278,19 @@ class _HomePageState extends State<HomePage> {
       );
     }
 
-    Widget popularProductTitle() {
-      return Container(
-        margin: EdgeInsets.only(
-          top: defaultMargin,
-          left: defaultMargin,
-          right: defaultMargin,
-        ),
-        child: Text(
-          'Produk Populer',
-          style: primaryTextStyle.copyWith(
-            fontSize: 22,
-            fontWeight: semiBold,
-          ),
-        ),
-      );
-    }
-
-    Widget popularProducts() {
-      return Container(
-        margin: EdgeInsets.only(
-          top: 14,
-          left: defaultMargin,
-          right: defaultMargin,
-        ),
-        child: SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Row(
-            children: [
-              SizedBox(
-                width: defaultMargin,
-              ),
-              const Row(
-                children: [
-                  ProductCard(),
-                  ProductCard(),
-                  ProductCard(),
-                  ProductCard(),
-                ],
-              ),
-            ],
-          ),
-        ),
-      );
-    }
-
     Widget newProductTitle() {
       return Container(
-        margin: EdgeInsets.only(
-          top: defaultMargin,
+        padding: EdgeInsets.only(
+          top: 10,
           left: defaultMargin,
           right: defaultMargin,
         ),
+        decoration: BoxDecoration(
+          color: alertColor,
+        ),
         child: Text(
-          'Produk Baru',
-          style: primaryTextStyle.copyWith(
+          'Produk Terbaru',
+          style: whiteTextStyle.copyWith(
             fontSize: 22,
             fontWeight: semiBold,
           ),
@@ -370,15 +300,127 @@ class _HomePageState extends State<HomePage> {
 
     Widget newProducts() {
       return Container(
-        margin: const EdgeInsets.only(
-          top: 14,
+        padding: EdgeInsets.only(
+          left: defaultMargin,
+          right: defaultMargin,
         ),
-        child: const Column(
+        decoration: BoxDecoration(
+          color: alertColor,
+        ),
+        child: const SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            children: [
+              ProductCard(),
+              ProductCard(),
+              ProductCard(),
+              ProductCard(),
+              ProductCard(),
+            ],
+          ),
+        ),
+      );
+    }
+
+    Widget bestProductTitle() {
+      return Container(
+        padding: EdgeInsets.only(
+          top: 10,
+          left: defaultMargin,
+          right: defaultMargin,
+        ),
+        decoration: BoxDecoration(
+          color: backgroundColor1,
+        ),
+        child: Text(
+          'Rekomendasi Produk',
+          style: primaryTextStyle.copyWith(
+            fontSize: 22,
+            fontWeight: semiBold,
+          ),
+        ),
+      );
+    }
+
+    Widget bestProducts() {
+      return Container(
+        padding: EdgeInsets.only(
+          left: defaultMargin,
+          right: defaultMargin,
+        ),
+        decoration: BoxDecoration(
+          color: backgroundColor1,
+        ),
+        child: const SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            children: [
+              ProductCardAlt(),
+              ProductCardAlt(),
+              ProductCardAlt(),
+              ProductCardAlt(),
+              ProductCardAlt(),
+            ],
+          ),
+        ),
+      );
+    }
+
+    Widget products() {
+      return Container(
+        padding: EdgeInsets.only(
+          left: defaultMargin,
+          right: defaultMargin,
+        ),
+        decoration: BoxDecoration(
+          color: backgroundColor1,
+        ),
+        child: const SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            children: [
+              ProductCardAlt(),
+              ProductCardAlt(),
+              ProductCardAlt(),
+              ProductCardAlt(),
+              ProductCardAlt(),
+            ],
+          ),
+        ),
+      );
+    }
+
+    Widget addressLabel() {
+      return Container(
+        width: MediaQuery.of(context).size.width,
+        decoration: BoxDecoration(
+          color: alertColor,
+        ),
+        padding: EdgeInsets.only(
+          left: defaultMargin,
+          right: defaultMargin,
+          top: 15,
+          bottom: 15,
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            ProductTile(),
-            ProductTile(),
-            ProductTile(),
-            ProductTile(),
+            Text(
+              "Timoti Beauty Indonesia",
+              style: whiteTextStyle.copyWith(
+                fontSize: 14,
+                fontWeight: medium,
+              ),
+            ),
+            const SizedBox(
+              height: 4,
+            ),
+            Text(
+              "lorem ipsum sir dolor amet",
+              style: whiteTextStyle.copyWith(
+                fontSize: 18,
+              ),
+            ),
           ],
         ),
       );
@@ -389,10 +431,12 @@ class _HomePageState extends State<HomePage> {
         header(),
         balanceAccount(),
         categories(),
-        popularProductTitle(),
-        popularProducts(),
+        bestProductTitle(),
+        bestProducts(),
         newProductTitle(),
         newProducts(),
+        products(),
+        addressLabel(),
       ],
     );
   }
